@@ -1,0 +1,669 @@
+/* style.css */
+
+:root {
+    --primary-blue: #3498db; /* Azul brillante */
+    --secondary-green: #2ecc71; /* Verde esmeralda */
+    --dark-blue: #2c3e50; /* Azul oscuro para texto/fondo */
+    --light-grey: #ecf0f1; /* Gris claro para fondos suaves */
+    --text-color: #34495e; /* Color de texto general */
+    --white: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+/* Sección de Inicio - NUEVA Disposición Horizontal de Barra */
+.home-section {
+    /* Mantenemos el padding si queremos espacio alrededor del contenido */
+    padding: 30px;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra para destacarla */
+    border-radius: var(--border-radius);
+    text-align: center; /* Centramos el contenido dentro de la sección */
+}
+
+.home-section h2 {
+    color: var(--primary-blue);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-green);
+    padding-bottom: 10px;
+    display: inline-block; /* Para que el borde sea solo del texto */
+}
+
+.home-section p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+/* Contenedor de la barra de progreso horizontal */
+.progress-bar-container-horizontal {
+    background-color: var(--dark-blue); /* Un fondo que contraste */
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Ancho máximo para que no sea demasiado larga */
+    margin: 30px auto; /* Centrar horizontalmente */
+    color: var(--white);
+}
+
+.progress-bar-container-horizontal h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--secondary-green); /* Color para el título del progreso */
+}
+
+.progress-bar-horizontal {
+    width: 100%;
+    background-color: #e0e0e0; /* Fondo de la barra vacía */
+    border-radius: 50px;
+    height: 40px; /* Altura de la barra */
+    overflow: hidden;
+    margin-bottom: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.progress-fill-horizontal {
+    height: 100%;
+    width: 0%; /* Se actualiza con JavaScript */
+    background-color: var(--secondary-green); /* Color de relleno */
+    border-radius: 50px;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease;
+    display: flex; /* Para centrar el porcentaje si está dentro del relleno */
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-percentage-horizontal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-blue); /* Color del texto del porcentaje */
+    font-weight: bold;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+.buy-button-horizontal {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.4em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    width: auto; /* Ancho automático, ajustándose al padding */
+    min-width: 280px; /* Ancho mínimo para que se vea bien */
+}
+
+.buy-button-horizontal:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+.buy-button-horizontal:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.call-to-action {
+    font-size: 1.1em;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8); /* Color para el texto dentro del contenedor de la barra */
+}
+
+/* Media Queries para responsividad de la barra horizontal */
+@media (max-width: 768px) {
+    .progress-bar-container-horizontal {
+        padding: 20px 15px;
+        max-width: 95%;
+    }
+    .progress-bar-container-horizontal h3 {
+        font-size: 1.4em;
+    }
+    .progress-bar-horizontal {
+        height: 35px;
+    }
+    .progress-percentage-horizontal {
+        font-size: 1.1em;
+    }
+    .buy-button-horizontal {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        min-width: 250px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-grey);
+    display: flex; /* Para el layout del sidebar y el contenido principal */
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+
+
+
+
+
+
+}
+
+/* Regla adicional para mover el porcentaje con la barra si está llena */
+.progress-vertical .progress-percentage-vertical {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Ocupa toda la altura del contenedor vertical */
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center; /* Centra verticalmente en el nuevo contenedor */
+    justify-content: center;
+    /* Puedes ajustar el color si quieres que sea diferente sobre el relleno */
+    color: var(--dark-blue); /* Se mantiene el color si está sobre fondo claro */
+    /* Puedes cambiarlo a var(--white) si quieres que se vea mejor sobre el relleno verde oscuro */
+    /* color: var(--white); */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Sombra más oscura para texto claro */
+
+
+}
+
+.buy-button-large:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+
+}
+
+/* Contenido de la derecha en la sección de inicio */
+.right-home-content {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    padding-left: 20px;
+    text-align: left;
+
+}
+
+.right-home-content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+
+}
+
+/* Media Queries para responsividad (¡Muy importante para este diseño!) */
+@media (max-width: 900px) {
+    
+    .right-home-content h2 {
+        font-size: 2em;
+    }
+}
+}
+
+.sidebar .logo {
+    margin-bottom: 30px;
+    text-align: left; /* Alineado a la izquierda como pediste */
+}
+
+.sidebar .logo h1 {
+    font-size: 1.8em;
+    color: var(--white);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    display: inline-block; /* Para que el borde sea solo del texto */
+}
+
+.sidebar .main-nav ul {
+    list-style: none;
+}
+
+.sidebar .main-nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar .main-nav ul li a {
+    color: var(--primary-blue); /* Usa tu azul principal definido */
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    display: block;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .main-nav ul li a:hover,
+.sidebar .main-nav ul li a.active {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Contenido Principal */
+.content {
+    margin-left: 250px; /* Deja espacio para el sidebar */
+    flex-grow: 1; /* Para que ocupe el resto del espacio */
+    padding: 30px;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    margin: 20px 20px 20px 270px; /* Margen para el contenido principal */
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: var(--primary-blue);
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-green);
+    padding-bottom: 10px;
+}
+
+section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Sección de Inicio (Hero y Barra de Progreso) */
+.hero-section {
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 100%);
+    color: var(--white);
+    padding: 50px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px; /* Separación de otras secciones */
+}
+
+.hero-section h2 {
+    color: var(--white);
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    border-bottom: none; /* No queremos borde en el h2 principal */
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.progress-bar-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    display: inline-block; /* Para centrarlo mejor */
+    min-width: 70%;
+    margin-top: 20px;
+}
+
+.progress-bar-container h3 {
+    color: var(--dark-blue);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    height: 30px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%; /* Se actualiza con JavaScript */
+    background-color: var(--secondary-green);
+    border-radius: 50px;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-percentage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-blue); /* Color del texto del porcentaje */
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+.buy-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: #2980b9; /* Tono más oscuro de azul */
+    transform: translateY(-2px);
+}
+
+.buy-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* Sección de Premios */
+.prizes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.prize-item {
+    background-color: var(--white);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.prize-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.prize-item img,
+.prize-item video {
+    max-width: 100%;
+    height: 200px; /* Altura fija para consistencia */
+    object-fit: cover; /* Ajusta la imagen/video */
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    display: block; /* Para eliminar espacio extra bajo la imagen */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prize-item h3 {
+    color: var(--dark-blue);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.prize-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Secciones de Información General (Cómo Participar, Contactos, FAQ) */
+.info-section ol,
+.info-section ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.info-section ol li,
+.info-section ul li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.contact-form .submit-button {
+    background-color: var(--secondary-green);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #27ae60; /* Tono más oscuro de verde */
+}
+
+.faq-item {
+    background-color: var(--light-grey);
+    border-left: 5px solid var(--primary-blue);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+}
+
+.faq-item h3 {
+    color: var(--dark-blue);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.faq-item p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+/* Pie de Página */
+footer {
+    width: calc(100% - 250px); /* Ajusta el ancho para el sidebar */
+    margin-left: 250px; /* Alinea con el contenido principal */
+    background-color: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* Media Queries para Responsividad (Opcional, pero recomendado) */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px; /* Reducir ancho del sidebar en pantallas medianas */
+    }
+
+    .content {
+        margin-left: 200px;
+        margin-right: 10px; /* Ajustar margen para pantallas más pequeñas */
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .progress-bar-container {
+        min-width: 90%; /* Más ancho en pantallas pequeñas */
+    }
+
+    .prizes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustar tamaño de columnas */
+    }
+
+    footer {
+        width: calc(100% - 200px);
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Apilar sidebar y contenido en pantallas pequeñas */
+    }
+/* Sidebar (Menú Lateral Izquierdo) */
+    .sidebar {
+        position: relative; /* Quitar fixed para que se desplace con el scroll */
+        width: 100%;
+        height: auto;
+        padding-bottom: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar .logo {
+        text-align: center; /* Centrar el logo en móvil */
+        margin-bottom: 20px;
+    }
+
+ .sidebar .logo h1 {
+    font-size: 1.8em; /* Puedes ajustar el tamaño si quieres */
+    color: var(--dark-blue); /* O var(--primary-blue) o #000000 */
+    border-bottom: 2px solid var(--primary-blue); /* Manteniendo el borde azul original */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+    .sidebar .main-nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los ítems del menú se envuelvan */
+        justify-content: center;
+    }
+
+    .sidebar .main-nav ul li {
+        margin: 5px 10px; /* Espacio entre ítems del menú */
+    }
+
+    .sidebar .main-nav ul li a {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+
+    .content {
+        margin-left: 0; /* No hay margen lateral del sidebar */
+        margin-top: 20px; /* Espacio entre sidebar y contenido */
+        margin-right: 20px;
+        padding: 20px;
+    }
+
+    .hero-section {
+        padding: 30px 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .progress-bar-container {
+        min-width: 95%;
+        padding: 15px;
+    }
+
+    .progress-bar-container h3 {
+        font-size: 1.2em;
+    }
+
+    .buy-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .prizes-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+        gap: 20px;
+    }
+
+    .prize-item img,
+    .prize-item video {
+        height: 180px;
+    }
+
+    .prize-item h3 {
+        font-size: 1.2em;
+    }
+
+    footer {
+        width: 100%; /* Ocupa todo el ancho */
+        margin-left: 0;
+        padding: 15px 0;
+    }
+}
+/* --- INICIO DE REGLAS DE COLOR DEL TÍTULO (AÑADIDAS PARA SOLUCIONAR PROBLEMAS) --- */
+.sidebar .logo h1 {
+    color: var(--dark-blue) !important; /* FORZAMOS el color a azul oscuro */
+    /* Si quieres azul brillante, usa: color: var(--primary-blue) !important; */
+    /* Si quieres negro puro, usa: color: #000000 !important; */
+}
+/* --- FIN DE REGLAS DE COLOR DEL TÍTULO --- */
