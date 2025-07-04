@@ -662,7 +662,7 @@ footer {
 }
 /* --- INICIO DE REGLAS DE COLOR DEL TÍTULO (AÑADIDAS PARA SOLUCIONAR PROBLEMAS) --- */
 .sidebar .logo h1 {
-    color: var(--dark-blue) !important; /* FORZAMOS el color a azul oscuro */
+    color: var(--secondary-green) !important; /* FORZAMOS el color a azul oscuro */
     /* Si quieres azul brillante, usa: color: var(--primary-blue) !important; */
     /* Si quieres negro puro, usa: color: #000000 !important; */
 }
