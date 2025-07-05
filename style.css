@@ -678,10 +678,5 @@ footer {
 /* --- FIN DE REGLAS DE COLOR DEL TÍTULO --- */
 
 /* Estilos para la imagen principal 'boleto1.png' */
-.right-home-content img { max-width: 75%; /* Ajusta este valor (ej. 80%, 60%, 50%) para el tamaño deseado */
-    height: auto; /* Mantiene la proporción para que la imagen no se deforme */
-    display: block; /* Asegura que la imagen se comporte como un bloque y acepte 'margin: auto' */
-    margin: 25px auto; /* Centra la imagen horizontalmente y le da espacio arriba y abajo */
-    border-radius: var(--border-radius); /* Opcional: si quieres esquinas redondeadas */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Opcional: una sombra sutil */
+.right-home-content img { .right-home-content img { display: block; max-width: 75%; /* height: auto; margin: 25px auto; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */ }
 }
