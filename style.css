@@ -678,8 +678,7 @@ footer {
 /* --- FIN DE REGLAS DE COLOR DEL TÍTULO --- */
 
 /* Estilos para la imagen principal 'boleto1.png' */
-.right-home-content img {
-    max-width: 75%; /* Ajusta este valor (ej. 80%, 60%, 50%) para el tamaño deseado */
+.right-home-content img { max-width: 75%; /* Ajusta este valor (ej. 80%, 60%, 50%) para el tamaño deseado */
     height: auto; /* Mantiene la proporción para que la imagen no se deforme */
     display: block; /* Asegura que la imagen se comporte como un bloque y acepte 'margin: auto' */
     margin: 25px auto; /* Centra la imagen horizontalmente y le da espacio arriba y abajo */
